@@ -1,0 +1,20 @@
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tgz
+*.tar.gz
+*.tar.bz2
+*.tbz2
+*.tar.xz
+*.txz
+*.gz
+*.bz2
+*.xz
+
+# OS/Editor junk (optional)
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
