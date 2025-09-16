@@ -1,0 +1,10 @@
+price-sniffer/
+├─ manifest.json
+├─ popup.html
+├─ popup.js
+├─ popup.css
+├─ background.js
+├─ content_scripts/
+│ └─ extract.js
+└─ libs/
+└─ xlsx.full.min.js ← положите сюда локально (SheetJS, без внешних CDN)

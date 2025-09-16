@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Price Sniffer</title>
+  <link rel="stylesheet" href="popup.css" />
+  <!-- SheetJS для XLSX -->
+  <script defer src="libs/xlsx.full.min.js"></script>
+  <script defer src="popup.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+<body>
+
+<section class="card">
+  <div class="row">
+    <input id="fileInput" type="file" accept=".xlsx,.csv,.xls" />
+  </div>
+  <div id="columnRow" class="column-block hidden">
+    <div class="field-label">Колонка с наименованием:</div>
+    <div class="row">
+      <button id="autoDetect">Авто</button>
+      <select id="columnSelect"></select>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="row">
+    <label>Поисковик:
+      <select id="engineSelect">
+        <option value="google">Google</option>
+        <option value="yandex">Yandex</option>
+        <option value="bing">Bing</option>
+        <option value="duckduckgo">DuckDuckGo</option>
+      </select>
+    </label>
+    <label>Задержка (сек):
+      <input id="delaySec" type="number" min="1" max="120" value="3" />
+    </label>
+  </div>
+  <div class="row">
+    <label title="Беречь нервные клетки и не ловить бан">Лимит товаров:
+      <input id="limitCount" type="number" min="1" value="100" />
+    </label>
+    <label>
+      <input id="useQuotes" type="checkbox" /> Брать запрос в кавычки
+    </label>
+  </div>
+  <details>
+    <summary>Доп. настройки Google</summary>
+    <div class="row">
+      <label>hl (язык): <input id="googleHl" placeholder="ru" value="ru" /></label>
+      <label>gl (страна): <input id="googleGl" placeholder="ru" value="ru" /></label>
+    </div>
+  </details>
+</section>
+
+<section class="card">
+  <div class="controls">
+    <button id="startBtn" disabled>Пуск</button>
+    <button id="pauseBtn" disabled>Пауза</button>
+    <button id="resumeBtn" disabled>Продолжить</button>
+    <button id="stopBtn" disabled class="warn">Стоп</button>
+  </div>
+  <div id="progressWrap" class="progress hidden">
+    <div id="progressBar"></div>
+  </div>
+  <div id="status" class="meta"></div>
+</section>
+
+<section class="card">
+  <div class="row">
+    <button id="downloadXlsx" disabled>Скачать XLSX</button>
+    <button id="downloadCsv" disabled>Скачать CSV</button>
+  </div>
+</section>
+
+<section class="card log-section">
+  <pre id="log" class="log"></pre>
+</section>
+
+</body>
+</html>

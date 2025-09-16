@@ -1,0 +1,32 @@
+{
+"manifest_version": 3,
+"name": "Price Sniffer — парсер цен из выдачи",
+"version": "1.0.0",
+"description": "Парсит цены с первой страницы выдачи (Google, Yandex, Bing, DuckDuckGo) по списку товаров из XLSX/CSV.",
+"icons": {
+"16": "icons/icon16.png",
+"48": "icons/icon48.png",
+"128": "icons/icon128.png"
+},
+"action": {
+"default_title": "Price Sniffer",
+"default_popup": "popup.html",
+"default_icon": {
+"16": "icons/icon16.png",
+"48": "icons/icon48.png",
+"128": "icons/icon128.png"
+}
+},
+"background": { "service_worker": "background.js" },
+"permissions": ["scripting", "tabs", "storage", "downloads", "activeTab"],
+"host_permissions": [
+"https://www.google.com/*",
+"https://www.google.ru/*",
+"https://www.google.by/*",
+"https://www.google.kz/*",
+"https://yandex.ru/*",
+"https://yandex.com/*",
+"https://www.bing.com/*",
+"https://duckduckgo.com/*"
+]
+}
